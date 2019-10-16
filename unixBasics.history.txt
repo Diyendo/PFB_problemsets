@@ -1,0 +1,257 @@
+    3  vi first_vi_file.txt
+    4  cat first_vi_file.txt 
+    5  cd /bin/
+    6  ls
+    7  ls -l
+    8  ls -t
+    9  ls 
+   10  man ls
+   11  ls -lt
+   12  ls -lt | head
+   13  date
+   14  sleep
+   15  man sleep
+   16  date;sleep;date
+   17  date ; sleep 2 ; date
+   18  date ; date
+   19  date; sleep 2 ; date
+   20  man sleep
+   21  cd ~
+   22  ls
+   23  rm first_vi_file.txt 
+   24  ls
+   25  history
+   26  curl -0 https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/cuffdiff.txt 
+   27  ls
+   28  curl -0 https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/cuffdiff.txt > cuffdiff.txt
+   29  cat cuffdiff.txt 
+   30  grep Chr7 cuffdiff.txt > fav_chr_cuffdiff.txt
+   31  ls
+   32  cat fav_chr_cuffdiff.txt 
+   33  less -S cuffdiff.txt 
+   34  less -S fav_chr_cuffdiff.txt 
+   35  grep Chr9 cuffdiff.txt >> fav_chr_cuffdiff.txt
+   36  cat fav_chr_cuffdiff.txt 
+   37  less cuffdiff.txt 
+   38  less -S fav_chr_cuffdiff.txt 
+   39  wc fav_chr_cuffdiff.txt 
+   40  wc cuffdiff.txt 
+   41  cat blablabla.txt
+   42  cat blablabla.txt 2> errors.txt
+   43  cat blablabla.txt > test.txt
+   44  ls
+   45  cat test.txt 
+   46  rm test.txt 
+   47  ls
+   48  cat errors.txt 
+   49  cat fav_chr_cuffdiff.txt blablabla.txt
+   50  cat fav_chr_cuffdiff.txt blablabla.txt 1>out.txt @>err.txt
+   51  cat fav_chr_cuffdiff.txt blablabla.txt 1>out.txt 2>err.txt
+   52  ls
+   53  cat err
+   54  cat err.txt 
+   55  cat fav_chr_cuffdiff.txt blablabla.txt &>all_out_err.txt 
+   56  cat all_out_err.txt 
+   57  pwd
+   58  cd ../
+   59  ls
+   60  ls -l
+   61  ls -F
+   62  ls -aF
+   63  man ls
+   64  ls | wc
+   65  ls -F | wc
+   66  man ls
+   67  ls | wc
+   68  man ls
+   69  ls -d 
+   70  man ls
+   71  ls -G
+   72  mkdir problemsets
+   73  ls
+   74  cd ~
+   75  mkdir problemsets
+   76  cd problemsets/
+   77  pwd
+   78  ls -F
+   79  cd ../
+   80  cd ../
+   81  ls -F
+   82  ls -F | wc 
+   83  cd ../..
+   84  ls -F
+   85  cd ..
+   86  ls
+   87  cd ~
+   88  ls
+   89  ls -F
+   90  cd problemsets/
+   91  wget https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/sequences.nt.fa 
+   92  ls
+   93  cat sequences.nt.fa 
+   94  wc sequences.nt.fa 
+   95  head sequences.nt.fa  | cat 
+   96  grep ">" | wc
+   97  grep ">" sequences.nt.fa | wc
+   98  grep ">" sequences.nt.fa
+   99  wc sequences.nt.fa 
+  100  head 1 sequences.nt.fa 
+  101  head -1 sequences.nt.fa 
+  102  tail -3 sequences.nt.fa 
+  103  tail sequences.nt.fa 
+  104  grep ">" sequences.nt.fa 
+  105  grep > sequences.nt.fa 
+  106  grep ">" sequences.nt.fa 
+  107  grep ">" sequences.nt.fa 
+  108  ls
+  109  cat seq
+  110  cat sequences.nt.fa 
+  111  history
+  112  wget https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/sequences.nt.fa 
+  113  ls
+  114  cat sequences.nt.fa
+  115  cat sequences.nt.fa.1 
+  116  rm sequences.nt.fa
+  117  mv sequences.nt.fa.1  sequences.nt.fa
+  118  ls
+  119  grep ">" sequences.nt.fa 
+  120  mv sequences.nt.fa cancer_genes.fasta
+  121  ls
+  122  cp ../cuffdiff.txt .  
+  123  ls
+  124  wget  https://raw.githubusercontent.com/prog4biol/pfb2019/master/files/cuffdiff.txt
+  125  ls
+  126  head cuffdiff.txt
+  127  head cuffdiff.txt.1 
+  128  cd ~
+  129  ls
+  130  cd problemsets/
+  131  ls
+  132  git init
+  133  ls
+  134  git remote add https://github.com/Diyendo/PFB_problemsets.git
+  135  ls
+  136  echo "# PFB_problemsets" >> README.md
+  137  ls
+  138  git init
+  139  ls
+  140  git add README.md
+  141  ls
+  142  git commit -m "first commit"
+  143  ls
+  144  git config --global --edit
+  145  git commit --amend --reset-author
+  146  git remote add origin https://github.com/Diyendo/PFB_problemsets.git
+  147  git push -u origin master
+  148  git push -u origin master
+  149  git config --global user.name
+  150  git push -u origin master
+  151  ls
+  152  ls
+  153  cd ..
+  154  ls
+  155  mv all_out_err.txt err.txt errors.txt fav_chr_cuffdiff.txt out.txt problemsets/
+  156  ls
+  157  cd problemsets/
+  158  ls
+  159  git status
+  160  git add all_out_err.txt cancer_genes.fasta cuffdiff.txt err.txt fav_chr_cuffdiff.txt out.txt 
+  161  git commit -m 'adding previous problem set files'
+  162  git push 
+  163  mkdir files
+  164  ls
+  165  mv cancer_genes.fasta files/
+  166  git add files/cancer_genes.fasta
+  167  git commit -m 'adding cancer_genes.fasta'
+  168  git push
+  169  vi mysequences.txt
+  170  ls
+  171  vi mysequences.txt 
+  172  git add mysequences.txt 
+  173  git commit -m 'adding mysequences.txt'
+  174  git push
+  175  ls
+  176  mkdir fastas
+  177  ls
+  178  cp files/cancer_genes.fasta fastas/ . 
+  179  ls
+  180  cd fastas/
+  181  ls
+  182  cd ..
+  183  cp files/cancer_genes.fasta fastas/ 
+  184  cd fastas/
+  185  ls
+  186  cd ..
+  187  ls
+  188  cd files/
+  189  ls
+  190  rm cancer_genes.fasta 
+  191  ls
+  192  cd ..
+  193  git status 
+  194  git add/rm files/cancer_genes.fasta 
+  195  git rm files/cancer_genes.fasta 
+  196  git add fastas/
+  197  ls fastas/
+  198  git add fastas/
+  199  git status 
+  200  git commit -m 'moved files directory'
+  201  git push 
+  202  git log
+  203  git log -oneline
+  204  git log oneline
+  205  git log 
+  206  git status
+  207  rm cuffdiff.txt.1 errors.txt 
+  208  ls
+  209  git status
+  210  vi oops
+  211  ls
+  212  rm oops oops.txt
+  213  ls
+  214  vi oops.txt
+  215  ls
+  216  git add oops.txt 
+  217  git commit 'adding file oops'
+  218  git commit -m 'adding file oops'
+  219  git status
+  220  git push 
+  221  git rm oops.txt 
+  222  git commit -m 'removing oops'
+  223  git push
+  224  ls
+  225  vi oops2
+  226  git add oops2 
+  227  git commit -m 'adding the file oops2'
+  228  git push
+  229  rm oops2 
+  230  git add oops2
+  231  ls
+  232  git commit -m 'removing oops2'
+  233  git push 
+  234  ls
+  235  vi oops2
+  236  git add oops2 
+  237  git commit -m 'adding oops2'
+  238  git push
+  239  rm oops2 
+  240  git status
+  241  git add oops2 
+  242  git status
+  243  git commit -m 'rm oops2'
+  244  git push
+  245  vi never 
+  246  ls
+  247  git add never 
+  248  git status
+  249  git reset never 
+  250  git status
+  251  git add
+  252  ls
+  253  man rm
+  254  man cp
+  255  echo history > unixBasics.history.txt
+  256  ls
+  257  cat unixBasics.history.txt 
+  258  history
+  259  history > unixBasics.history.txt
