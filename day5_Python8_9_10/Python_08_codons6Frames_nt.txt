@@ -1,0 +1,107 @@
+[?2004h[?1049h[?1h=[?2004h[1;47r[?12h[?12l[27m[29m[m[H[2J[?25l[47;1H"myPythonScript8_2.py" 103L, 3912C[1;1H[93m  1 [m[96m#!/usr/bin/env python3[m
+[93m  2 
+  3 [m[38;5;81mimport[m re
+[93m  4 [m[38;5;81mimport[m sys
+[93m  5 
+  6 [mfasta_file=sys.argv[[95m1[m]
+[93m  7 [msequence_list=[]
+[93m  8 [msequence_comp_list=[]
+[93m  9 [msequence=[95m""[m
+[93m 10 [msequence_comp=[95m""[m
+[93m 11 [mseqName_list=[]
+[93m 12 [mseqName=[95m""[m
+[93m 13 [mfasta_dict={}
+[93m 14 [mn=[95m0[m
+[93m 15 [mcondons=[95m""[m
+[93m 16 [mcodon_list1=[]
+[93m 17 [mcodon_list2=[]
+[93m 18 [mcodon_list3=[]
+[93m 19 [mcodon_list1_comp=[]
+[93m 20 [mcodon_list2_comp=[]
+[93m 21 [mcodon_list3_comp=[]
+[93m 22 
+ 23 with[m [1m[96mopen[m(fasta_file) [93mas[m fasta:
+[93m 24 [m  [93mfor[m line [93min[m fasta:
+[93m 25 [m    line=line.rstrip()
+[93m 26 [m    found=re.search([95mr"(^>\S+)\s+(.+)"[m,line) [96m#Found all the header and assign them to found  [m
+[93m 27 [m    [93mif[m found:[31C[96m#If the line is a header  [m
+[93m 28 [m      seqName=found.group([95m1[m)[16C[96m#Assign the ID in a variable seqName[m
+[93m 29 [m      seqName=seqName.replace([95m">"[m,[95m""[m)[7C[96m#Remove the ">" at the beginning of the ID[m
+[93m 30 [m      seqName_list.append(seqName)[10C[96m#Store the IDs in a list called seqName_list[m
+[93m 31 [m      [93mif[m sequence:
+[93m 32 [m[8Csequence=sequence.upper()[11C[96m#Convert the sequence to upper case[m
+[93m 33 [m[8Csequence_list.append(sequence)      [96m#Store the sequences in a list calles sequence_list[m
+[93m 34 [m[8Csequence=[95m""[m
+[93m 35 [m    [93melse[m:
+[93m 36 [m      sequence=sequence+line[16C[96m#Concatenate successive lines of sequences in a variable called ss[m[37;1H[93m    [m[96mequence[m
+[93m 37 
+ 38 [msequence_list.append(sequence)[14C[96m#Append the last sequence to the end of the sequence_list [m
+[93m 39 
+ 40 for[m seq [93min[m sequence_list:
+[93m 41 [m  sequence_comp=seq[::-[95m1[m]
+[93m 42 [m  sequence_comp=sequence_comp.replace([95m"A"[m,[95m"a"[m)
+[93m 43 [m  sequence_comp=sequence_comp.replace([95m"T"[m,[95m"A"[m)
+[93m 44 [m  sequence_comp=sequence_comp.replace([95m"a"[m,[95m"T"[m)
+[93m 45 [m  sequence_comp=sequence_comp.replace([95m"C"[m,[95m"c"[m)[1;5H[?25h[2;5H[3;5H[1C[2;5H[?25l[38;5;81mimport[m sys[3;5H[K[4;5Hfasta_file=sys.argv[[95m1[m][5;5Hsequence_list=[][6;5Hsequence_comp_list=[][6;26H[K[7;13H=[95m""[m[7;16H[K[8;18H=[95m""[m[8;21H[K[9;8HName_list=[][10;8HName=[95m""[m[10;15H[K[11;5Hfasta_dict={}[11;18H[K[12;5Hn=[95m0[m[12;8H[K[13;5Hcondons=[95m""[m[13;15H[K[14;5Hcodon_list1=[][15;7Hdon_list2=[][16;15H3[17;15H1_comp=[][18;15H2_comp=[][19;15H3[20;5H[K[21;5H[93mwith[m [1m[96mopen[m(fasta_file) [93mas[m fasta:[22;7H[93mfor[m line [93min[m fasta:[23;5H    line=line.rstrip()[23;27H[K[24;7H  found=re.search([95mr"(^>\S+)\s+(.+)"[m,line) [96m#Found all the header and assign them to found  [m[25;9H[93mif[m found:         [22C[96m#If the line is a header  [m[26;9H  seqName=found.group([95m1[m)               [2C[96mAssign the ID in a variable seqNam[m[26;85H[K[27;9H  seqName=seqName.replace([95m">"[m,[95m""[m)[8C[96mRemove the ">" at the beginning of the ID[m[28;18H_list.append(seqName)[11C[96mStore the IDs in a list called seqName_list[m[29;11H[93mif[m sequence:                   [7C  [29;51H[K[30;11H  sequence=sequence.upper() [11C[96mConvert the sequence to upper case[m[30;84H[K[31;11H  sequence_list.append(sequence)      [96m#Store the sequences in a list calles sequence_list[m[32;22H[95m""[m[32;24H[K[33;9H[93melse[m:[33;14H[K[34;11Hsequence=sequence+line[16C[96m#Concatenate successive lines of sequences in a variable called ss[m[35;1H[93m   [m[1C[96mequence[m[35;12H[K[36;3H[93m5[m[36;11H[K[37;2H[93m36[m[1Csequence_list.append(sequence)[14C[96m#Append the last sequence to the end of the sequence_list [m[39;5H[93mfor[m seq [93min[m sequence_list:[39;30H[K[40;7Hsequence_comp=seq[::-[95m1[m][41;5H  sequence_comp=sequence_comp.replace([95m"A"[m,[95m"a"[m)[42;24Huence_comp.replace([95m"T"[m,[95m"A"[m)[43;44H[95ma[3CT[44;44HC[3Cc[45;44HG[3CC[46;44Hc[3CG[2;5H[?25h[?25l[m[47;1H/\<for\>[47;9H[K[47;1H[22;7H[?25h[?25l line [93min[m fasta:[22;22H[K[22;7H[?25h[23;8H[?25l[47;1H[39;5H[?25h[2C[40;7H[12C[?25l[47;1H[1m-- INSERT --[m[40;7H[K[41;44H[95mT[3CA[42;44Ha[3CT[43;44HC[3Cc[44;44HG[3CC[45;44Hc[3CG[m[46;20H_list.append(sequence_comp)[46;47H[K[40;5H[?25h[?25ld[?25h[?25le[?25h[?25lm[?25h[?25lv[?25h[?25l [?25h[?25ld[?25h[?25l[41;7H[K[42;44H[95mT[3CA[43;44Ha[3CT[44;44HC[3Cc[45;44HG[3CC[m[46;20H=sequence_comp.replace([95m"c"[m,[95m"G"[m)[41;5H[?25h[?25l[42;7H[K[43;44H[95mT[3CA[44;44Ha[3CT[45;44HC[3Cc[46;44HG[3CC[42;5H[?25h[?25l[m[43;7H[K[44;44H[95mT[3CA[45;44Ha[3CT[46;44HC[3Cc[43;5H[?25h[?25l[m[44;7H[K[45;44H[95mT[3CA[46;44Ha[3CT[44;5H[?25h[m[47;1H[K[?25l[44;5H[?25h[45;7H[46;7H[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 46 [m  sequence_comp=sequence_comp.replace([95m"C"[m,[95m"c"[m)[46;7H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 47 [m  sequence_comp=sequence_comp.replace([95m"G"[m,[95m"C"[m)[46;7H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 48 [m  sequence_comp=sequence_comp.replace([95m"c"[m,[95m"G"[m)[46;7H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 49 [m  sequence_comp_list.append(sequence_comp)[46;7H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 50 [?25h[?25l[1;46r[m[46;1H
+[1;47r[46;1H[93m 51 [m[1m[96mprint[m(sequence_list)[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 52 [m[1m[96mprint[m(sequence_comp_list)[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 53 [m [?25h[?25l
+[97m[41mE446: No file name under cursor[46;6H[?25h[?25l[1;46r[m[46;1H
+[1;47r[46;1H[93m 54 [m[47;1H[K[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 55 for[m seq [93min[m sequence_list:[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 56 [m  codons= re.findall([95mr"(.{3})"[m, seq)[8C[96m#Find all the codons in the sequences store in sequence_list[46;7H[?25h[?25l[1;46r[m[46;1H
+[1;47r[46;1H[93m 57 [m  codon_list1.append(codons)[16C[96m#Appen in a list codons, the list of codons[46;7H[?25h[?25l[1;46r[m[46;1H
+[1;47r[46;1H[93m 58 for[m seq [93min[m sequence_list:[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 59 [m  codons= re.findall([95mr"(.{3})"[m, seq[[95m1[m:])  [96m#Find all the codons of the frame 2, starting at the 2nd nt[46;7H[?25h[?25l[1;46r[m[46;1H
+[1;47r[46;1H[93m 60 [m  codon_list2.append(codons)[46;7H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 61 for[m seq [93min[m sequence_list:[46;5H[?25h[?25l[1;46r[46;1H
+[1;47r[46;1H[93m 62 [m  codons= re.findall([95mr"(.{3})"[m, seq[[95m2[m:])[46;7H[?25h[6;9H[7;9H[26;5H[?25l[47;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[26;5H[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[?25h[?25l[47;1H[1m-- VISUAL BLOCK --[m[47;19H[K[26;5H[?25h[27m[29m[m[H[2J[?25l[1;1H[93m 18 [mcodon_list2_comp=[]
+[93m 19 [mcodon_list3_comp=[]
+[93m 20 
+ 21 with[m [1m[96mopen[m(fasta_file) [93mas[m fasta:
+[93m 22 [m   line [93min[m fasta:
+[93m 23 [m    line=line.rstrip()
+[93m 24 [m    found=re.search([95mr"(^>\S+)\s+(.+)"[m,line) [96m#Found all the header and assign them to found  [m
+[93m 25 [m    [93mif[m found:[31C[96m#If the line is a header  [m
+[93m 26 [m      seqName=found.group([95m1[m)[16C[96m#Assign the ID in a variable seqName[m
+[93m 27 [m      seqName=seqName.replace([95m">"[m,[95m""[m)[7C[96m#Remove the ">" at the beginning of the ID[m
+[93m 28 [m      seqName_list.append(seqName)[10C[96m#Store the IDs in a list called seqName_list[m
+[93m 29 [m      [93mif[m sequence:
+[93m 30 [m[8Csequence=sequence.upper()[11C[96m#Convert the sequence to upper case[m
+[93m 31 [m[8Csequence_list.append(sequence)      [96m#Store the sequences in a list calles sequence_lii[m[15;1H[93m    [m[96mst[m
+[93m 32 [m[8Csequence=[95m""[m
+[93m 33 [m    [93melse[m:
+[93m 34 [m      sequence=sequence+line[16C[96m#Concatenate successive lines of sequences in a vv[m[19;1H[93m    [m[96mariable called sequence[m
+[93m 35 
+ 36 [msequence_list.append(sequence)[14C[96m#Append the last sequence to the end of the sequee[m[22;1H[93m    [m[96mnce_list [m
+[93m 37 
+ 38 for[m seq [93min[m sequence_list:
+[93m 39 [mdemv d
+[93m 40 
+ 41 
+ 42 
+ 43 
+ 44 [m  sequence_comp=sequence_comp.replace([95m"T"[m,[95m"A"[m)
+[93m 45 [m  sequence_comp=sequence_comp.replace([95m"a"[m,[95m"T"[m)
+[93m 46 [m  sequence_comp=sequence_comp.replace([95m"C"[m,[95m"c"[m)
+[93m 47 [m  sequence_comp=sequence_comp.replace([95m"G"[m,[95m"C"[m)
+[93m 48 [m  sequence_comp=sequence_comp.replace([95m"c"[m,[95m"G"[m)
+[93m 49 [m  sequence_comp_list.append(sequence_comp)
+[93m 50 
+ 51 [m[1m[96mprint[m(sequence_list)
+[93m 52 [m[1m[96mprint[m(sequence_comp_list)
+[93m 53 
+ 54 
+ 55 for[m seq [93min[m sequence_list:
+[93m 56 [m  codons= re.findall([95mr"(.{3})"[m, seq)[8C[96m#Find all the codons in the sequences store in see[m[43;1H[93m    [m[96mquence_list[m
+[93m 57 [m  codon_list1.append(codons)[16C[96m#Appen in a list codons, the list of codons[m
+[93m 58 for[m seq [93min[m sequence_list:
+[93m 59 [m  codons= re.findall([95mr"(.{3})"[m, seq[[95m1[m:])  [96m#Find all the codons of the frame 2, starting at th[m[46;1H[94m@                                                                                                [m[47;1H[1m-- VISUAL BLOCK --[28;5H[?25h[?25l[?25h[47;1H[m[?2004l[?1l>[?1049lVim: Caught deadly signal HUP
+Vim: preserving files...
+Vim: Finished.
+[47;1H
